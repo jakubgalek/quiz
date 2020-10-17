@@ -47,7 +47,7 @@
   }
 
   footer{
-    position: relative;
+    position: sticky;
     height: 7vh;
     justify-content: center;
     font-weight: 100;
@@ -62,7 +62,7 @@
     background-color: white;
     font-family: 'Lato', sans-serif;
     color: #707070;
-    min-height: 100vh;
+    height: 100%;
   }
   
   .main{
