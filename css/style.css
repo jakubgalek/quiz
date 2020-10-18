@@ -113,17 +113,25 @@
   .cookies{
     position: fixed;
     bottom: 0;
+    padding-bottom: 0.7em;
     color: #42BFDD;
     border-top: 2px solid #42BFDD;
     background-color: white;
     box-shadow: 0px -3px 12px 0px rgba(112,112,112,0.35);
     border-top-left-radius: 22px;
     border-top-right-radius: 22px;
-
+    display: flex;
+    flex-wrap:wrap;
+    align-content:center;
     z-index: 99;
+  }
+  .cookies > .cookiesHeader{
+    flex-basis:100%;
   }
   .cookies > .cookiesText{
     font-weight: 100;
+    flex-basis: 84%;
+    margin: 0 1em;
   }
   .cookies > .cookiesButton{
     background-color: #42BFDD;
@@ -134,6 +142,8 @@
     padding: 1em 3em;
     font-size: 14px;
     cursor: pointer;
+    height: 4em;
+    align-self: center;
   }
   
   li{
@@ -157,17 +167,22 @@
     .footer{
       font-size: 16px;
     }
+    .cookies{
+      flex-wrap:wrap;
+      display: unset;
+    }
     .cookies > .cookiesHeader{
       margin-bottom: 1em;
       font-size: 14px;
     }
     .cookies > .cookiesText{
       margin-bottom: 2em;
-      font-size: 12px;
+      font-size: 14px;
     }
     .cookies > .cookiesButton{
       font-size: 19px;
       padding: 0.5em 1em;
+      height: unset;
     }
 
     li{
@@ -183,5 +198,23 @@
   }
     .initialLetter{
       margin-right: 17px;
+    }
+  }
+
+
+  @media only screen and (max-width: 1138px) {
+    .cookies{
+      flex-wrap:wrap;
+      display: unset;
+    }
+    .cookies > .cookiesHeader{
+      margin-bottom: 1em;
+    }
+    .cookies > .cookiesText{
+      margin-bottom: 1em;
+    }
+    .cookies > .cookiesButton{
+      font-size: 19px;
+      height: unset;
     }
   }
