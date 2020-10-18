@@ -47,11 +47,12 @@
   }
 
   footer{
-    position: sticky;
+    position: inherit;
     height: 7vh;
     justify-content: center;
     font-weight: 100;
     box-shadow: 0px -3px 6px 0px rgba(112,112,112,0.32);
+    margin-top: 5em;
   }
 
   .Natalie, .Jacob {margin-right: 0.5em; font-weight: bold; color: white; text-decoration: none;}
@@ -62,12 +63,13 @@
     background-color: white;
     font-family: 'Lato', sans-serif;
     color: #707070;
-    height: 100%;
+    min-height: 100vh;
   }
   
   .main{
     margin: 0px 80px;
     background: white;
+    height: 100vh;
   }
 
   .main > h2{
