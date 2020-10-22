@@ -4,7 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const showExams = i => {
         for (let j = 0; j < titleOfExamTest.length; j++) {
-            titleOfExam[i].contains(titleOfExamTest).style.display = "block";
+            titleOfExamTest[0].style.display = "block";
+            titleOfExamTest[1].style.display = "block";
         }
     }
     for (let i = 0; i < titleOfExam.length; i++) {
