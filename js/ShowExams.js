@@ -3,12 +3,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const titleOfExamTest = document.querySelectorAll(".titleOfExamTest");
 
 
-    const showExams = i => {
-        titleOfExam[i].appendChild(titleOfExamTest).style.display = "block";
-    }
-
     for (let i = 0; i < titleOfExam.length; i++) {
         titleOfExam[i].addEventListener('click', showExams(i));
+    }
+    function showExams(j) {
+        for (let i = 0; i < titleOfExamTest.length; i++) {
+            titleOfExam[j].appendChild(titleOfExamTest[i]).style.display = "block";
+        }
+
     }
 
 
