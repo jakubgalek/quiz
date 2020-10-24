@@ -40,10 +40,12 @@
   header > .logo > img{
     height: -webkit-fill-available;
     display: inline-flex;
+    cursor: pointer;
   }
   header > .logo > h1{
     font-size: 32px;
     display: inline-flex;
+    cursor: pointer;
   }
 
   footer{
