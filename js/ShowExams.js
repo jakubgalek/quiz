@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < Exam.length; i++) {
         Exam[i].addEventListener('click', showExams = i => {
             for (let j = 0; j < titlesOfExamTest.length; j++) {
-                titlesOfExamTest[j].style.display = "block";
+                titlesOfExamTest[j].style.display = "flex";
             }
         });
     }
