@@ -66,6 +66,7 @@
     font-family: 'Lato', sans-serif;
     color: #707070;
     min-height: 100vh;
+    user-select: none;
   }
   
   .main{
@@ -89,9 +90,14 @@
     list-style-type: none;
     padding: 0;
   }
+  .searchZone{
+    cursor: unset;
+  }
+
   .search-bar{
     width: 100%;
   }
+
   .search-bar > img{
     padding-right: 1em;
   }
