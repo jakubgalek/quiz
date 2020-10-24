@@ -166,6 +166,10 @@
       display: none;
     }
 
+    .titleOfExamTest.active {
+      display: flex;
+    }
+    
     @media only screen and (max-width: 539px) {
     .baseline {
       align-items: inherit;
