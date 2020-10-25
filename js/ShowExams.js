@@ -1,11 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const exam = document.querySelectorAll(".exam");
-    const titleOfExam = document.querySelectorAll(".titleOfExam");
-    const titleOfExamTest = document.querySelectorAll(".titleOfExamTest");
+    let exam = document.querySelectorAll(".exam");
+    let titleOfExam = document.querySelectorAll(".titleOfExam");
+    let titleOfExamTest = document.querySelectorAll(".titleOfExamTest");
 
-    exam.forEach(titleOfExam => {
-        titleOfExam.addEventListener("click", () => {
-            titleOfExamTest.classList.toggle("active");
-        });
+    titleOfExam.addEventListener("click", () => {
+
+        if (exam.hasChildNodes()) {
+            let children = titleOfExam.childNodes;
+            for (let i = 0; i < children.length; i++) {
+                titleOfExamTest[i].classList.toggle("active");
+            };
+        };
+
+
+
     });
+
+
+
 });
