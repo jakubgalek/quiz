@@ -175,65 +175,27 @@
     .titleOfExamTest.active {
       display: flex;
     }
-    
-    @media only screen and (max-width: 539px) {
-    .baseline {
-      align-items: inherit;
-    }
-    .main{
-      margin: 0px 26px;
-    }
-    .footer{
-      font-size: 16px;
-    }
-    .cookies{
+
+
+    .box{
+      height: 40vh;
+      border: 1px solid rgba(66,191,221,1);
+      display: flex;
       flex-wrap:wrap;
-      display: unset;
+      align-content:center;
+      border-radius: 12px;
     }
-    .cookies > .cookiesHeader{
-      margin-bottom: 1em;
+
+    .test, .question{
+      margin-top: 1em;
+      background-color: #42BFDD;
+      color: white;
+      border-radius: 7px;
+      border: #42BFDD;
+      box-shadow: 0px 3px 6px 0px rgba(66,191,221,0.35);
+      padding: 1em 3em;
       font-size: 14px;
+      cursor: pointer;
+      height: 3em;
+      align-self: center;
     }
-    .cookies > .cookiesText{
-      margin-bottom: 2em;
-      font-size: 14px;
-    }
-    .cookies > .cookiesButton{
-      font-size: 19px;
-      padding: 0.5em 1em;
-      height: unset;
-    }
-
-    li{
-      box-shadow: 0px 1px 1px 0px rgba(112,112,112,0.32);
-      margin-bottom: 0;
-    }
-    li:first-child{
-      height: 2em;
-    }
-    .search-bar > img {
-      padding-right: 0.7em;
-      height: 27px;
-  }
-    .initialLetter{
-      margin-right: 17px;
-    }
-  }
-
-
-  @media only screen and (max-width: 1138px) {
-    .cookies{
-      flex-wrap:wrap;
-      display: unset;
-    }
-    .cookies > .cookiesHeader{
-      margin-bottom: 1em;
-    }
-    .cookies > .cookiesText{
-      margin-bottom: 1em;
-    }
-    .cookies > .cookiesButton{
-      font-size: 19px;
-      height: unset;
-    }
-  }

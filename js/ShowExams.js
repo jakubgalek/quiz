@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const titleOfExam = document.querySelectorAll(".titleOfExam");
     const titleOfExamTest = document.querySelector(".titleOfExamTest");
 
-    exam.forEach((titleOfExam) => {
+    exam.forEach(titleOfExam => {
         titleOfExam.addEventListener("click", () => {
             titleOfExamTest.classList.toggle("active");
         });
