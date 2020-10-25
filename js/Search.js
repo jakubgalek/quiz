@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", _ => {
         let input, filter, ul, li, a, i, txtValue;
         input = search;
         filter = input.value.toUpperCase();
-        ul = document.getElementById("myUL");
-        li = ul.getElementsByClassName('.titleOfExam');
+        ul = document.querySelector("myUL");
+        li = ul.querySelectorAll('.titleOfExam');
 
         for (i = 0; i < li.length; i++) {
-            a = li[i].getElementsByTagName("a")[0];
+            a = li[i].querySelectorAll("a")[0];
             txtValue = a.innerText;
             if (txtValue.toUpperCase().indexOf(filter) > -1) {
                 li[i].style.display = "";

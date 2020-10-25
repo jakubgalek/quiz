@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     while (switching) {
         switching = false;
 
-        b = list.childNodes;
+        b = list.innerHTML;
         for (i = 0; i < (b.length - 1); i++) {
             shouldSwitch = false;
             if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
