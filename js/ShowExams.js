@@ -3,14 +3,16 @@ document.addEventListener("DOMContentLoaded", () => {
     let titleOfExam = document.querySelectorAll(".titleOfExam");
     let titleOfExamTest = document.querySelectorAll(".titleOfExamTest");
 
-    titleOfExam.addEventListener("click", () => {
 
-        if (exam.hasChildNodes()) {
-            let children = titleOfExam.childNodes;
-            for (let i = 0; i < children.length; i++) {
+
+    if (exam.hasChildNodes()) {
+        let children = titleOfExam.childNodes;
+        for (let i = 0; i < children.length; i++) {
+            titleOfExam[i].addEventListener("click", () => {
                 titleOfExamTest[i].className.toggle("active");
-            };
+            });
+
         };
-    });
+    };
 
 });
