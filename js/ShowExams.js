@@ -8,14 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (exam.hasChildNodes()) {
             let children = titleOfExam.childNodes;
             for (let i = 0; i < children.length; i++) {
-                titleOfExamTest[i].classList.toggle("active");
+                titleOfExamTest[i].className.toggle("active");
             };
         };
-
-
-
     });
-
-
 
 });
