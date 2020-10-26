@@ -1,18 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
-    let exam = document.querySelectorAll(".exam");
-    let titleOfExam = document.querySelectorAll(".titleOfExam");
-    let titleOfExamTest = document.querySelectorAll(".titleOfExamTest");
+    const exams = document.querySelectorAll(".exam");
 
-
-
-    if (exam.hasChildNodes()) {
-        let children = titleOfExam.childNodes;
-        for (let i = 0; i < children.length; i++) {
-            titleOfExam[i].addEventListener("click", () => {
-                titleOfExamTest[i].className.toggle("active");
-            });
-
-        };
-    };
-
+    exams.forEach(exam => {
+        const title = document.querySelector('.titleOfExam')
+        const test = document.querySelector('.titleOfExamTest')
+        title.addEventListener("click", () => {
+            title.classList.toggle('active')
+        });
+    });
+    exams.forEach(exam => {
+        const title = document.querySelector('.titleOfExam')
+        const test = document.querySelector('.titleOfExamTest')
+        title.addEventListener("click", () => {
+            title.classList.toggle('active')
+        });
+    });
 });
