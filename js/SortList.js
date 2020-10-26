@@ -1,14 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-    let list, i, switching, b, shouldSwitch;
-    list = document.querySelectorAll(".exam");
+    let exams, i, switching, b, shouldSwitch;
+    exams = document.querySelectorAll(".exam");
     switching = true;
-
-    while (switching) {
+    exams.forEach(exam => {
         switching = false;
-
-        b = list.innerHTML;
+        b = exams.querySelector('.titleOfExam');
         for (i = 0; i < (b.length - 1); i++) {
             shouldSwitch = false;
+
             if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
                 shouldSwitch = true;
                 break;
@@ -18,6 +17,5 @@ document.addEventListener("DOMContentLoaded", () => {
             b[i].parentNode.insertBefore(b[i + 1], b[i]);
             switching = true;
         }
-    }
-
+    });
 });
