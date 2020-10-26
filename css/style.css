@@ -167,12 +167,12 @@
       cursor: pointer;
     }
 
-    .titleOfExamTest{
+    .exam-tests-list{
       margin-left: 2.7em;
       display: none;
     }
 
-    .titleOfExamTest.active {
+    .exam-tests-list.active {
       display: flex;
     }
 
