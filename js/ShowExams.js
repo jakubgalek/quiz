@@ -8,7 +8,4 @@ document.addEventListener("DOMContentLoaded", () => {
             testList.classList.toggle('active')
         });
     });
-    title.addEventListener("click", () => {
-        testList.classList.toggle('active')
-    });
 });
