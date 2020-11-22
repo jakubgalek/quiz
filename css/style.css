@@ -1,270 +1,312 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
 * {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  ::placeholder {
-    color:#D2D9DB;
-  }
-  .wrapper {
-    display: flex;  
-    flex-flow: row wrap;
-    font-weight: bold;
-    text-align: center;
-  }
-  
-  .wrapper > * {
-    padding: 10px;
-    flex: 1 100%;
-  }
-  
-  header,footer{
-    background-color: #42BFDD;
-    color: white;
-    height: 10vh;
-    display:flex;
-    align-items: center;
-    padding: 0px 50px;
-    font-style: italic;
-  }
-  .logo, .search-bar{
-    display: flex;
-    align-items: center;
-  }
-  header > .logo > img{
-    height: -webkit-fill-available;
-    display: inline-flex;
-    cursor: pointer;
-  }
-  header > .logo > h1{
-    font-size: 32px;
-    display: inline-flex;
-    cursor: pointer;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-  footer{
-    position: relative;
-    height: 7vh;
-    justify-content: center;
-    font-weight: 100;
-    box-shadow: 0px -3px 6px 0px rgba(112,112,112,0.32);
-    margin-top: 3em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
+::placeholder {
+  color: #D2D9DB;
+}
 
-  .Natalie, .Jacob {margin-right: 0.5em; font-weight: bold; color: white; text-decoration: none;}
-  .Natalie > img, .Jacob > img {height: 14px; margin-left: 0.2em;}
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
+}
 
-  body{
-    margin: 0;
-    background-color: white;
-    font-family: 'Lato', sans-serif;
-    color: #707070;
-    min-height: 100vh;
-    user-select: none;
-  }
-  
-  .main{
-    margin: 0px 80px;
-    background: white;
-  }
+.wrapper>* {
+  padding: 10px;
+  flex: 1 100%;
+}
 
-  .main > h2{
-    font-style: italic;
-    font-weight: lighter;
-  }
+header,
+footer {
+  background-color: #42BFDD;
+  color: white;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  padding: 0px 50px;
+  font-style: italic;
+}
 
-  .list{
-    display: inline-flex;
-    width: 100%;
-    border: thistle;
-    flex-flow: column;
-  }
+.logo,
+.search-bar {
+  display: flex;
+  align-items: center;
+}
 
-  .list > ul{
-    list-style-type: none;
-    padding: 0;
-  }
-  .searchZone{
-    cursor: unset;
-  }
-
-  .search-bar{
-    width: 100%;
-  }
-
-  .search-bar > img{
-    padding-right: 1em;
-  }
-
-  .search-bar .search{
-    width: inherit;
-    border: none;
-    font-size: 22px;
-  }
-  .search-bar > .search:focus {outline: none;}
-
-  .baseline{
-      align-items: baseline;
-      display: flex;
-  }
-  .initialLetter, .initialLetterTest{
-    font-size: 42px;
-    color: #42BFDD;
-    margin-right: 10px;
-  }
-
-  .cookies{
-    position: fixed;
-    bottom: 0;
-    padding-bottom: 0.7em;
-    color: #42BFDD;
-    border-top: 2px solid #42BFDD;
-    background-color: white;
-    box-shadow: 0px -3px 12px 0px rgba(112,112,112,0.35);
-    border-top-left-radius: 22px;
-    border-top-right-radius: 22px;
-    display: flex;
-    flex-wrap:wrap;
-    align-content:center;
-    z-index: 99;
-  }
-  .cookies > .cookiesHeader{
-    flex-basis:100%;
-  }
-  .cookies > .cookiesText{
-    font-weight: 100;
-    flex-basis: 84%;
-    margin: 0 1em;
-  }
-  .cookies > .cookiesButton{
-    background-color: #42BFDD;
-    color: white;
-    border-radius: 7px;
-    border: #42BFDD;
-    box-shadow: 0px 3px 6px 0px rgba(66,191,221,0.35);
-    padding: 1em 3em;
-    font-size: 14px;
-    cursor: pointer;
-    height: 4em;
-    align-self: center;
-  }
-  
-  .titleOfExam{
+header>.logo>img {
+  height: -webkit-fill-available;
+  display: inline-flex;
   cursor: pointer;
+}
+
+header>.logo>h1 {
+  font-size: 32px;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+footer {
+  position: relative;
+  height: 14vh;
+  justify-content: center;
+  font-weight: 100;
+  box-shadow: 0px -3px 6px 0px rgba(112, 112, 112, 0.32);
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.Natalie,
+.Jacob {
+  margin-right: 0.5em;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.Natalie>img,
+.Jacob>img {
+  height: 14px;
+  margin-left: 0.2em;
+}
+
+body {
+  margin: 0;
+  background-color: white;
+  font-family: 'Lato', sans-serif;
+  color: #707070;
+  min-height: 100vh;
+  user-select: none;
+}
+
+.main {
+  margin: 0px 80px;
+  background: white;
+}
+
+.main>h2 {
+  font-style: italic;
+  font-weight: lighter;
+}
+
+.list {
+  display: inline-flex;
+  width: 100%;
+  border: thistle;
+  flex-flow: column;
+}
+
+.list>ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.searchZone {
+  cursor: unset;
+}
+
+.search-bar {
+  width: 100%;
+}
+
+.search-bar>img {
+  padding-right: 1em;
+}
+
+.search-bar .search {
+  width: inherit;
+  border: none;
+  font-size: 22px;
+}
+
+.search-bar>.search:focus {
+  outline: none;
+}
+
+.baseline {
+  align-items: baseline;
+  display: flex;
+}
+
+.initialLetter,
+.initialLetterTest {
+  font-size: 42px;
+  color: #42BFDD;
+  margin-right: 10px;
+}
+
+.cookies {
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 0.7em;
+  color: #42BFDD;
+  border-top: 2px solid #42BFDD;
+  background-color: white;
+  box-shadow: 0px -3px 12px 0px rgba(112, 112, 112, 0.35);
+  border-top-left-radius: 22px;
+  border-top-right-radius: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  z-index: 99;
+}
+
+.cookies>.cookiesHeader {
+  flex-basis: 100%;
+}
+
+.cookies>.cookiesText {
+  font-weight: 100;
+  flex-basis: 84%;
+  margin: 0 1em;
+}
+
+.cookies>.cookiesButton {
+  background-color: #42BFDD;
+  color: white;
+  border-radius: 7px;
+  border: #42BFDD;
+  box-shadow: 0px 3px 6px 0px rgba(66, 191, 221, 0.35);
+  padding: 1em 3em;
+  font-size: 14px;
+  cursor: pointer;
+  height: 4em;
+  align-self: center;
+}
+
+.titleOfExam {
+  cursor: pointer;
+}
+
+li,
+.titleOfExamTest {
+  box-shadow: 0px -3px 12px 0px rgba(112, 112, 112, 0.32);
+  display: flex;
+  height: 3.5em;
+  text-align: left;
+  align-items: center;
+  font-weight: 100;
+  margin-bottom: 0.7em;
+  padding: 0 1em;
+}
+
+.exam-tests-list {
+  margin-left: 2.7em;
+  display: none;
+}
+
+.exam-tests-list.active {
+  display: flex;
+}
+
+
+.box {
+  height: 40vh;
+  border: 1px solid rgba(66, 191, 221, 1);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  border-radius: 12px;
+}
+
+.test,
+.question {
+  margin-top: 1em;
+  background-color: #42BFDD;
+  color: white;
+  border-radius: 7px;
+  border: #42BFDD;
+  box-shadow: 0px 3px 6px 0px rgba(66, 191, 221, 0.35);
+  padding: 1em 3em;
+  font-size: 14px;
+  cursor: pointer;
+  height: 3em;
+  align-self: center;
+}
+
+@media only screen and (max-width: 539px) {
+  .baseline {
+    align-items: inherit;
   }
-  
-  li, .titleOfExamTest{
-      box-shadow: 0px -3px 12px 0px rgba(112,112,112,0.32);
-      display:flex;
-      height: 3.5em;
-      text-align: left;
-      align-items: center;
-      font-weight: 100;
-      margin-bottom: 0.7em;
-      padding: 0 1em;
-    }
 
-    .exam-tests-list{
-      margin-left: 2.7em;
-      display: none;
-    }
+  .main {
+    margin: 0px 26px;
+  }
 
-    .exam-tests-list.active {
-      display: flex;
-    }
+  .footer {
+    font-size: 16px;
+  }
+
+  .cookies {
+    flex-wrap: wrap;
+    display: unset;
+  }
+
+  .cookies>.cookiesHeader {
+    margin-bottom: 1em;
+    font-size: 14px;
+  }
+
+  .cookies>.cookiesText {
+    margin-bottom: 2em;
+    font-size: 14px;
+  }
+
+  .cookies>.cookiesButton {
+    font-size: 19px;
+    padding: 0.5em 1em;
+    height: unset;
+  }
+
+  li {
+    box-shadow: 0px 1px 1px 0px rgba(112, 112, 112, 0.32);
+    margin-bottom: 0;
+  }
+
+  li:first-child {
+    height: 2em;
+  }
+
+  .search-bar>img {
+    padding-right: 0.7em;
+    height: 27px;
+  }
+
+  .initialLetter {
+    margin-right: 17px;
+  }
+}
 
 
-    .box{
-      height: 40vh;
-      border: 1px solid rgba(66,191,221,1);
-      display: flex;
-      flex-wrap:wrap;
-      align-content:center;
-      border-radius: 12px;
-    }
+@media only screen and (max-width: 1138px) {
+  .cookies {
+    flex-wrap: wrap;
+    display: unset;
+  }
 
-    .test, .question{
-      margin-top: 1em;
-      background-color: #42BFDD;
-      color: white;
-      border-radius: 7px;
-      border: #42BFDD;
-      box-shadow: 0px 3px 6px 0px rgba(66,191,221,0.35);
-      padding: 1em 3em;
-      font-size: 14px;
-      cursor: pointer;
-      height: 3em;
-      align-self: center;
-    }
+  .cookies>.cookiesHeader {
+    margin-bottom: 1em;
+  }
 
-    @media only screen and (max-width: 539px) {
-      .baseline {
-        align-items: inherit;
-      }
-      .main{
-        margin: 0px 26px;
-      }
-      .footer{
-        font-size: 16px;
-      }
-      .cookies{
-        flex-wrap:wrap;
-        display: unset;
-      }
-      .cookies > .cookiesHeader{
-        margin-bottom: 1em;
-        font-size: 14px;
-      }
-      .cookies > .cookiesText{
-        margin-bottom: 2em;
-        font-size: 14px;
-      }
-      .cookies > .cookiesButton{
-        font-size: 19px;
-        padding: 0.5em 1em;
-        height: unset;
-      }
-  
-      li{
-        box-shadow: 0px 1px 1px 0px rgba(112,112,112,0.32);
-        margin-bottom: 0;
-      }
-      li:first-child{
-        height: 2em;
-      }
-      .search-bar > img {
-        padding-right: 0.7em;
-        height: 27px;
-    }
-      .initialLetter{
-        margin-right: 17px;
-      }
-    }
-  
-  
-    @media only screen and (max-width: 1138px) {
-      .cookies{
-        flex-wrap:wrap;
-        display: unset;
-      }
-      .cookies > .cookiesHeader{
-        margin-bottom: 1em;
-      }
-      .cookies > .cookiesText{
-        margin-bottom: 1em;
-      }
-      .cookies > .cookiesButton{
-        font-size: 19px;
-        height: unset;
-      }
-    }
+  .cookies>.cookiesText {
+    margin-bottom: 1em;
+  }
+
+  .cookies>.cookiesButton {
+    font-size: 19px;
+    height: unset;
+  }
+}
