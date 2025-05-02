@@ -45,7 +45,8 @@ footer {
 }
 
 header>.logo>img {
-  height: -webkit-fill-available;
+  width: 2em;
+  margin-right: 0.2em;
   display: inline-flex;
   cursor: pointer;
 }
@@ -166,12 +167,14 @@ body {
 
 .cookies>.cookiesHeader {
   flex-basis: 100%;
+  text-align: center;
 }
 
 .cookies>.cookiesText {
   font-weight: 100;
   flex-basis: 84%;
   margin: 0 1em;
+  text-align: justify;
 }
 
 .cookies>.cookiesButton {
