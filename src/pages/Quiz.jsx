@@ -1,69 +1,150 @@
-import { useState, useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
-import questions from '../data/questions'
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import questions from '../data/questions';
 
 export default function Quiz() {
-  const { categoryId } = useParams()
-  const navigate = useNavigate()
-  const [currentQuestion, setCurrentQuestion] = useState(0)
-  const [score, setScore] = useState(0)
-  const [timeLeft, setTimeLeft] = useState(40 * 60) // 40 minut
+  const { categoryId } = useParams();
+  const navigate = useNavigate();
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [score, setScore] = useState(0);
+  const [timeLeft, setTimeLeft] = useState(39 * 60 + 59); // 39:59
+  const [answers, setAnswers] = useState([]);
 
-  // Filtruj pytania według kategorii
-  const categoryQuestions = questions.filter(q => q.category === categoryId)
+  const categoryQuestions = questions.filter(q => q.category === categoryId);
 
-  // Licznik czasu
   useEffect(() => {
+    // Inicjalizacja odpowiedzi
+    setAnswers(Array(categoryQuestions.length).fill(null));
+    
     const timer = setInterval(() => {
-      setTimeLeft(prev => prev > 0 ? prev - 1 : 0)
-    }, 1000)
-    return () => clearInterval(timer)
-  }, [])
+      setTimeLeft(prev => {
+        if (prev <= 0) {
+          clearInterval(timer);
+          handleFinishQuiz();
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [categoryId]);
 
-  const handleAnswer = (answerIndex) => {
-    if (answerIndex === categoryQuestions[currentQuestion].correctAnswer) {
-      setScore(score + 1)
+  const formatTime = (seconds) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+  };
+
+  const handleAnswerSelect = (index) => {
+    setSelectedAnswer(index);
+    const newAnswers = [...answers];
+    newAnswers[currentQuestionIndex] = index;
+    setAnswers(newAnswers);
+  };
+
+  const handleNextQuestion = () => {
+    if (selectedAnswer === categoryQuestions[currentQuestionIndex].correctAnswer) {
+      setScore(prev => prev + 1);
     }
 
-    if (currentQuestion < categoryQuestions.length - 1) {
-      setCurrentQuestion(currentQuestion + 1)
-    } else {
-      navigate('/results', { state: { 
-        score, 
+    if (currentQuestionIndex < categoryQuestions.length - 1) {
+      setCurrentQuestionIndex(prev => prev + 1);
+      setSelectedAnswer(answers[currentQuestionIndex + 1]);
+    }
+  };
+
+  const handlePrevQuestion = () => {
+    if (currentQuestionIndex > 0) {
+      setCurrentQuestionIndex(prev => prev - 1);
+      setSelectedAnswer(answers[currentQuestionIndex - 1]);
+    }
+  };
+
+  const handleQuestionNavigation = (index) => {
+    setCurrentQuestionIndex(index);
+    setSelectedAnswer(answers[index]);
+  };
+
+  const handleFinishQuiz = () => {
+    navigate('/results', {
+      state: {
+        score,
         totalQuestions: categoryQuestions.length,
-        timeSpent: `${Math.floor((40 * 60 - timeLeft) / 60)}:${String((40 * 60 - timeLeft) % 60).padStart(2, '0')}`
-      }})
-    }
-  }
+        timeSpent: formatTime(39 * 60 + 59 - timeLeft),
+        category: categoryQuestions[0]?.categoryName || categoryId
+      }
+    });
+  };
 
- return (
-    <div className="wrapper min-h-screen">
+  return (
+    <div className="quiz-container">
 
-      <main className="main">
-        <div className="box">
-          <div className="mb-4 text-white">
-            Czas: {Math.floor(timeLeft / 60)}:{String(timeLeft % 60).padStart(2, '0')}
-          </div>
-          
-          <h2 className="text-xl font-semibold mb-4 text-white">
-            Pytanie {currentQuestion + 1}/{categoryQuestions.length}
-          </h2>
-          
-          <p className="mb-6 text-white">{categoryQuestions[currentQuestion]?.text}</p>
-          
-          <div className="space-y-2">
-            {categoryQuestions[currentQuestion]?.answers.map((answer, idx) => (
-              <button
-                key={idx}
-                onClick={() => handleAnswer(idx)}
-                className="question" // Używa Twojego starego stylu
-              >
-                {answer}
-              </button>
-            ))}
-          </div>
+      {/* Licznik i informacje */}
+      <div className="quiz-meta">
+        <span>Test - {categoryQuestions.length} pytań</span>
+        <span>{currentQuestionIndex + 1}/{categoryQuestions.length}</span>
+        <span className="timer">{formatTime(timeLeft)}</span>
+      </div>
+
+      {/* Pytanie */}
+      <div className="question-container">
+        <p className="question-text">
+          <span className="question-number">{currentQuestionIndex + 1}.</span>
+          {categoryQuestions[currentQuestionIndex]?.text}
+        </p>
+        
+        {/* Odpowiedzi */}
+        <div className="answers-list">
+          {categoryQuestions[currentQuestionIndex]?.answers.map((answer, index) => (
+            <div
+              key={index}
+              className={`answer-option ${selectedAnswer === index ? 'selected' : ''}`}
+              onClick={() => handleAnswerSelect(index)}
+            >
+              <span className="option-letter">{String.fromCharCode(65 + index)}</span>
+              <span className="option-text">{answer}</span>
+            </div>
+          ))}
         </div>
-      </main>
+      </div>
+
+      {/* Nawigacja */}
+      <div className="navigation-buttons">
+        <button
+          className="nav-button back"
+          onClick={handlePrevQuestion}
+          disabled={currentQuestionIndex === 0}
+        >
+          wróć
+        </button>
+        <button
+          className="nav-button next"
+          onClick={handleNextQuestion}
+          disabled={currentQuestionIndex === categoryQuestions.length - 1}
+        >
+          dalej
+        </button>
+        <button
+          className="nav-button finish"
+          onClick={handleFinishQuiz}
+        >
+          zakończ
+        </button>
+      </div>
+
+      {/* Siatka pytań */}
+      <div className="questions-grid">
+        {categoryQuestions.map((_, index) => (
+          <div
+            key={index}
+            className={`question-number ${currentQuestionIndex === index ? 'active' : ''} ${answers[index] !== null ? 'answered' : ''}`}
+            onClick={() => handleQuestionNavigation(index)}
+          >
+            {index + 1}
+          </div>
+        ))}
+      </div>
     </div>
-  )
+  );
 }

@@ -20,7 +20,7 @@ export default [
       'Elektryczny (E)',
       'Turystyczny (T)'
     ],
-    correctAnswer: 0
+    correctAnswer: 1
   },
   // ... dodaj więcej pytań
 ]

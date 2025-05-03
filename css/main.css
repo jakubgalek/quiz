@@ -297,7 +297,8 @@ li,
 @media only screen and (max-width: 1138px) {
   .cookies {
     flex-wrap: wrap;
-    display: unset;
+    display: flex;
+    flex-direction: column;
   }
 
   .cookies>.cookiesHeader {
@@ -312,4 +313,167 @@ li,
     font-size: 19px;
     height: unset;
   }
+}
+
+.quiz-container{
+  
+    margin: 52px 100px;
+}
+
+.quiz-interface {
+  font-family: 'Lato', sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #333;
+}
+
+.quiz-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.quiz-header h1 {
+  color: #42BFDD;
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.quiz-header h2 {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+.quiz-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.timer {
+  font-weight: bold;
+}
+
+.question-container {
+  margin-bottom: 30px;
+}
+
+.question-text {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.answers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.answer-option {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.answer-option:hover {
+  background-color: #f5f5f5;
+}
+
+.answer-option.selected {
+  background-color: #e6f2ff;
+  border-color: #42BFDD;
+}
+
+.option-letter {
+  font-weight: bold;
+  margin-right: 15px;
+  color: #42BFDD;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+
+.nav-button {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nav-button.back {
+  background-color: #f0f0f0;
+}
+
+.nav-button.next {
+  background-color: #42BFDD;
+  color: white;
+}
+
+.nav-button.finish {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.nav-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.questions-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.question-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.question-number:hover {
+  background-color: #e0e0e0;
+}
+
+.question-number.active {
+  background-color: #42BFDD;
+  color: white;
+}
+
+.question-number.answered {
+  background-color: #a5d8ff;
+}
+
+.quiz-footer {
+  text-align: center;
+  margin-top: 30px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+a {
+  text-decoration: none; /* Usuwa podkreślenie */
+  color: inherit; /* Kolor linku dziedziczy po rodzicu */
+}
+
+a:hover {
+  text-decoration: none; /* Zapewnia brak podkreślenia przy hover */
+  color: inherit; /* Kolor pozostaje bez zmian przy hover */
 }
