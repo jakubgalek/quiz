@@ -16,13 +16,11 @@ function App() {
       <Header />
       <CookiesBanner />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/quiz" element={<Home />} />
         <Route path="/quiz/:categoryId" element={<Quiz />} />
         <Route path="/qualification/:id" element={<QualificationScreen />} />
         <Route path="/results" element={<Results />} />
         <Route path="/random-question/:questionId" element={<RandomQuestionScreen />} />
-
-        {/* Route dla nieznalezionych stron */}
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

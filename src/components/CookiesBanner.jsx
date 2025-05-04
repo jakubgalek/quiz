@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react'
 
 export default function CookiesBanner() {
   const [visible, setVisible] = useState(true)
-
-  // Sprawdzamy, czy użytkownik już zaakceptował pliki cookies
+  
   useEffect(() => {
     const cookiesAccepted = localStorage.getItem('cookiesAccepted')
     if (cookiesAccepted) {

@@ -4,8 +4,8 @@ const Header = () => {
   return (
     <header className="header">
       <div className="logo">
-        <img src="/img/logo.svg" alt="bulb" className="logo-img" />
-        <a href="/">
+        <img src="/quiz/img/logo.svg" alt="bulb" className="logo-img" />
+        <a href="/quiz">
         <h1>TwojaKwalifikacja</h1>
         </a>
       </div>

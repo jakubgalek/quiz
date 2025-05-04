@@ -6,8 +6,6 @@ import NotFound from './NotFound';
 const RandomQuestionScreen = () => {
   const { questionId } = useParams();
   const navigate = useNavigate();
-  
-  // Znajdź pytanie po ID
   const question = questions.find(q => q.id === questionId);
   
   if (!question) {
@@ -20,7 +18,7 @@ const RandomQuestionScreen = () => {
 
   const handleAnswerSelect = (index) => {
     setSelectedAnswer(index);
-    setIsAnswerChecked(false); // Resetowanie statusu po zmianie odpowiedzi
+    setIsAnswerChecked(false);
   };
 
   const handleCheckAnswer = () => {
@@ -37,7 +35,6 @@ const RandomQuestionScreen = () => {
   // Losowanie nowego pytania, ale upewniamy się, że to nie będzie obecne pytanie
   const filteredQuestions = questions.filter(q => q.category === question.category && q.id !== question.id);
   
-  // Jeśli brak innych pytań w tej samej kategorii, po prostu zwróć
   if (filteredQuestions.length === 0) {
     alert("Brak innych pytań w tej kategorii.");
     return;
@@ -46,7 +43,6 @@ const RandomQuestionScreen = () => {
   const randomIndex = Math.floor(Math.random() * filteredQuestions.length);
   const randomQuestion = filteredQuestions[randomIndex];
 
-  // Zresetowanie statusu odpowiedzi i feedbacku
   setIsAnswerChecked(false);
   setSelectedAnswer(null);
 
@@ -90,12 +86,11 @@ const RandomQuestionScreen = () => {
             Sprawdź odpowiedź
         </button>
       </div>
-               {isAnswerChecked && (
-          <div className={`answer-feedback ${isCorrect ? 'correct' : 'incorrect'}`}>
-            {isCorrect ? 'Brawo! Odpowiedź jest poprawna.' : 'Niestety, odpowiedź jest niepoprawna.'}
-          </div>
-        )}   
-
+      {isAnswerChecked && (
+        <div className={`answer-feedback ${isCorrect ? 'correct' : 'incorrect'}`}>
+          {isCorrect ? 'Brawo! Odpowiedź jest poprawna.' : 'Niestety, odpowiedź jest niepoprawna.'}
+        </div>
+      )}   
 
     </div>
   );

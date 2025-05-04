@@ -12,7 +12,7 @@ const Footer = () => {
           className="Natalie"
         >
           Natalia Niedziela
-          <img src="/img/Octocat.png" alt="GitHub" />
+          <img src="/quiz/img/Octocat.png" alt="GitHub" />
         </a>
         Created by{' '}
         <a 
@@ -22,7 +22,7 @@ const Footer = () => {
           className="Jacob"
         >
           Jakub Gałek
-          <img src="/img/Octocat.png" alt="GitHub" />
+          <img src="/quiz/img/Octocat.png" alt="GitHub" />
         </a>
       </p>
     </footer>

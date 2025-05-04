@@ -14,8 +14,8 @@ export default function Results() {
         </div>
         <p className="mb-6">Czas: {timeSpent}</p>
         <Link 
-          to="/" 
-          className="test" // Używa Twojego starego stylu przycisku
+          to="/quiz" 
+          className="test"
         >
           Strona główna
         </Link>
