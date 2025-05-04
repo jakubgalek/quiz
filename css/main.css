@@ -477,3 +477,31 @@ a:hover {
   text-decoration: none; /* Zapewnia brak podkreślenia przy hover */
   color: inherit; /* Kolor pozostaje bez zmian przy hover */
 }
+
+/* Styl dla kontenera wyszukiwania */
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  font-size: 18px;
+  color: #888;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 30px; /* Dodajemy padding, aby mieć miejsce na lupkę */
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: #007bff;
+}

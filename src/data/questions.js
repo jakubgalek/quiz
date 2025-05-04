@@ -1,6 +1,6 @@
 export default [
   {
-    id: 'q1',
+    id: 'S1',
     category: 'S',
     text: 'Wykonywanie i naprawa wyrobów złotniczych to kwalifikacja typu:',
     answers: [
@@ -12,7 +12,7 @@ export default [
     correctAnswer: 2
   },
   {
-    id: 'q2',
+    id: 'S1',
     category: 'S',
     text: 'Realizacja nagrań studyjnych należy do kategorii:',
     answers: [
@@ -21,6 +21,5 @@ export default [
       'Turystyczny (T)'
     ],
     correctAnswer: 1
-  },
-  // ... dodaj więcej pytań
+  }
 ]
