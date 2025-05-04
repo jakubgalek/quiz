@@ -44,15 +44,17 @@ export default function Quiz() {
   };
 
   const handleNextQuestion = () => {
-    if (selectedAnswer === categoryQuestions[currentQuestionIndex].correctAnswer) {
-      setScore(prev => prev + 1);
-    }
+  // Sprawdzanie odpowiedzi na bieżące pytanie i aktualizacja wyniku
+  if (selectedAnswer === categoryQuestions[currentQuestionIndex].correctAnswer) {
+    setScore(prev => prev + 1);
+  }
 
-    if (currentQuestionIndex < categoryQuestions.length - 1) {
-      setCurrentQuestionIndex(prev => prev + 1);
-      setSelectedAnswer(answers[currentQuestionIndex + 1]);
-    }
-  };
+  // Przejście do kolejnego pytania
+  if (currentQuestionIndex < categoryQuestions.length - 1) {
+    setCurrentQuestionIndex(prev => prev + 1);
+    setSelectedAnswer(answers[currentQuestionIndex + 1]);
+  }
+};
 
   const handlePrevQuestion = () => {
     if (currentQuestionIndex > 0) {
@@ -66,16 +68,20 @@ export default function Quiz() {
     setSelectedAnswer(answers[index]);
   };
 
-  const handleFinishQuiz = () => {
-    navigate('/results', {
-      state: {
-        score,
-        totalQuestions: categoryQuestions.length,
-        timeSpent: formatTime(39 * 60 + 59 - timeLeft),
-        category: categoryQuestions[0]?.categoryName || categoryId
-      }
-    });
-  };
+const handleFinishQuiz = () => {
+  let finalScore = score;
+  if (selectedAnswer === categoryQuestions[currentQuestionIndex].correctAnswer) {
+    finalScore++;
+  }
+  navigate('/results', {
+    state: {
+      score: finalScore,
+      totalQuestions: categoryQuestions.length,
+      timeSpent: formatTime(39 * 60 + 59 - timeLeft),
+      category: categoryQuestions[0]?.categoryName || categoryId
+    }
+  });
+};
 
   return (
     <div className="quiz-container">
@@ -90,8 +96,8 @@ export default function Quiz() {
       {/* Pytanie */}
       <div className="question-container">
         <p className="question-text">
-          <span className="question-number">{currentQuestionIndex + 1}.</span>
-          {categoryQuestions[currentQuestionIndex]?.text}
+          <span className="question-number">{currentQuestionIndex + 1}{". "}{categoryQuestions[currentQuestionIndex]?.text}</span>
+          
         </p>
         
         {/* Odpowiedzi */}
@@ -111,28 +117,20 @@ export default function Quiz() {
 
       {/* Nawigacja */}
       <div className="navigation-buttons">
-        <button
-          className="nav-button back"
-          onClick={handlePrevQuestion}
-          disabled={currentQuestionIndex === 0}
-        >
-          wróć
-        </button>
-        <button
-          className="nav-button next"
-          onClick={handleNextQuestion}
-          disabled={currentQuestionIndex === categoryQuestions.length - 1}
-        >
-          dalej
-        </button>
-        <button
-          className="nav-button finish"
-          onClick={handleFinishQuiz}
-        >
-          zakończ
-        </button>
-      </div>
-
+  <button
+    className="nav-button back"
+    onClick={handlePrevQuestion}
+    disabled={currentQuestionIndex === 0}
+  >
+    Wróć
+  </button>
+  <button
+    className={`nav-button next ${currentQuestionIndex === categoryQuestions.length - 1 ? 'nav-button finish' : ''}`}
+    onClick={currentQuestionIndex === categoryQuestions.length - 1 ? handleFinishQuiz : handleNextQuestion}
+  >
+    {currentQuestionIndex === categoryQuestions.length - 1 ? 'Zakończ' : 'Dalej'}
+  </button>
+</div>
       {/* Siatka pytań */}
       <div className="questions-grid">
         {categoryQuestions.map((_, index) => (

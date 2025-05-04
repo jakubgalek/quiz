@@ -17,7 +17,7 @@ export default function Results() {
           to="/" 
           className="test" // Używa Twojego starego stylu przycisku
         >
-          Jeszcze raz
+          Strona główna
         </Link>
       </main>
     </div>

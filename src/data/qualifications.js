@@ -3,7 +3,8 @@ export default [
     id: 'S1',
     code: 'S.1',
     name: 'Wykonywanie i naprawa wyrobów złotniczych i jubilerskich',
-    category: 'Artystyczny'
+    category: 'Artystyczny',
+    description: 'Pełny opis kwalifikacji...'
   },
   {
     id: 'EE08',

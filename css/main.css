@@ -20,6 +20,7 @@
   flex-flow: row wrap;
   font-weight: bold;
   text-align: center;
+  margin: 0 80px;
 }
 
 .wrapper>* {
@@ -31,7 +32,7 @@ header,
 footer {
   background-color: #42BFDD;
   color: white;
-  height: 10vh;
+  height: 8vh;
   display: flex;
   align-items: center;
   padding: 0px 50px;
@@ -59,7 +60,6 @@ header>.logo>h1 {
 
 footer {
   position: relative;
-  height: 14vh;
   justify-content: center;
   font-weight: 100;
   box-shadow: 0px -3px 6px 0px rgba(112, 112, 112, 0.32);
@@ -94,7 +94,7 @@ body {
 }
 
 .main {
-  margin: 0px 80px;
+  margin: 10em 80px;
   background: white;
 }
 
@@ -217,12 +217,14 @@ li,
 
 
 .box {
-  height: 40vh;
   border: 1px solid rgba(66, 191, 221, 1);
   display: flex;
   flex-wrap: wrap;
   align-content: center;
   border-radius: 12px;
+  flex-direction: column;
+  padding-top: 3em;
+    padding-bottom: 7em;
 }
 
 .test,
@@ -246,7 +248,7 @@ li,
   }
 
   .main {
-    margin: 0px 26px;
+    margin: 8em 80px;
   }
 
   .footer {
@@ -369,6 +371,7 @@ li,
   display: flex;
   flex-direction: column;
   gap: 10px;
+  align-items: center;
 }
 
 .answer-option {
@@ -379,6 +382,8 @@ li,
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.2s;
+  width: 28em;
+
 }
 
 .answer-option:hover {
@@ -397,9 +402,10 @@ li,
 }
 
 .navigation-buttons {
-  display: flex;
-  justify-content: space-between;
-  margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    gap: 15px;
 }
 
 .nav-button {
@@ -432,7 +438,7 @@ li,
 
 .questions-grid {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(20, 1fr);
   gap: 10px;
   margin-bottom: 30px;
 }
@@ -482,13 +488,13 @@ a:hover {
 .search-container {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 11px;
   position: relative;
 }
 
 .search-icon {
   position: absolute;
-  left: 10px;
+  left: 17px;
   font-size: 18px;
   color: #888;
 }
@@ -504,4 +510,150 @@ a:hover {
 
 .search-input:focus {
   border-color: #007bff;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2em;
+  margin-bottom: 10em;
+}
+
+/* NotFound.css */
+.not-found-container {
+  text-align: center;
+  padding: 40px;
+}
+
+.not-found-header {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.not-found-message {
+  font-size: 1.25rem;
+  margin-bottom: 24px;
+}
+
+.not-found-link {
+  padding: 12px 24px;
+  background-color: #dd4242;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.quiz-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quiz-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.question-container {
+  margin-bottom: 20px;
+}
+
+.question-text {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.answers-list {
+  margin-top: 10px;
+}
+
+.answer-option {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.answer-option:hover {
+  background-color: #f0f0f0;
+}
+
+.option-letter {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.option-text {
+  flex: 1;
+}
+
+.answer-feedback-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.answer-feedback {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.answer-feedback.correct {
+  color: green;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.answer-feedback.incorrect {
+  margin-top: 25px;
+  text-align: center;
+  color: rgba(134, 24, 24, 0.986);
+}
+
+.navigation-buttons {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.check-answer, .random-question {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.check-answer {
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 7px;
+  border: #42BFDD;
+  box-shadow: 0px 3px 6px 0px rgba(66, 191, 221, 0.35);
+  font-size: 14px;
+  cursor: pointer;
+  height: 3em;
+  align-self: center;
+}
+
+.random-question {
+  background-color: #42BFDD;
+  color: white;
+  border-radius: 7px;
+  border: #42BFDD;
+  box-shadow: 0px 3px 6px 0px rgba(66, 191, 221, 0.35);
+  font-size: 14px;
+  cursor: pointer;
+  height: 3em;
+  align-self: center;
+}
+
+.check-answer:hover, .random-question:hover {
+  opacity: 0.8;
 }

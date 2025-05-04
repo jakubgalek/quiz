@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import qualifications from '../data/qualifications';
-import { FaSearch } from 'react-icons/fa'; // Import ikony lupki
+import { FaSearch } from 'react-icons/fa';
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState(''); // Stan na przechowanie tekstu
@@ -12,9 +12,15 @@ export default function Home() {
     (q.code && q.code.toLowerCase().includes(searchTerm.toLowerCase())) // Sprawdzamy, czy 'name' i 'code' są zdefiniowane
   );
 
+  // Sortowanie wyników alfabetycznie po symbolu (code)
+  const sortedQualifications = filteredQualifications.sort((a, b) => {
+    if (a.code.toLowerCase() < b.code.toLowerCase()) return -1;
+    if (a.code.toLowerCase() > b.code.toLowerCase()) return 1;
+    return 0;
+  });
+
   return (
     <div className="wrapper min-h-screen">
-      <main className="main">
         <h2>Wybierz typ kwalifikacji</h2>
 
         {/* Pole wyszukiwania */}
@@ -34,7 +40,7 @@ export default function Home() {
         {/* Lista kwalifikacji */}
         <div className="list">
           <ul>
-            {filteredQualifications.map((q) => (
+            {sortedQualifications.map((q) => (
               <li key={q.id}>
                 <Link to={`/qualification/${q.id}`} className="titleOfExam">
                   <span className="initialLetter">{q.code}</span>
@@ -44,7 +50,6 @@ export default function Home() {
             ))}
           </ul>
         </div>
-      </main>
     </div>
   );
 }
