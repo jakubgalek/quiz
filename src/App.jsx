@@ -1,5 +1,4 @@
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Quiz from './pages/Quiz';
 import Results from './pages/Results';
@@ -10,7 +9,7 @@ import QualificationScreen from './components/QualificationScreen'; // Importuje
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Header />
       <CookiesBanner />
       <Routes>
@@ -18,9 +17,10 @@ function App() {
         <Route path="/quiz/:categoryId" element={<Quiz />} />
         <Route path="/qualification/:id" element={<QualificationScreen />} />
         <Route path="/results" element={<Results />} />
+
       </Routes>
       <Footer />
-    </Router>
+    </BrowserRouter>
   );
 }
 
